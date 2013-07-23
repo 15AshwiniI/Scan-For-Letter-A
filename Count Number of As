@@ -1,0 +1,36 @@
+import java.lang.Object;
+import java.util.Scanner;
+
+/**
+ * Write a description of class CountNumberOfA here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class CountNumberOfA
+{
+    // instance variables - replace the example below with your own
+    int count;
+    private String word;
+
+    /**
+     * Constructor for objects of class CountNumberOfA
+     */
+    public int CountNumberOfA()
+    {
+        Scanner scanner = new Scanner (System.in);
+        String word = "";
+        System.out.println("Please enter a phrase that ends in a period");
+        word = scanner.nextLine();
+        System.out.println("Thanks, now we will scan for the number of letter A");
+        System.out.println("I got this string " + word);
+        for (int j = 0; j < word.length(); j++){
+            if ( word.substring(j,j+1).equals("a")){
+                count ++;
+            }
+        }
+        System.out.println("The number of letter a in this word is  " + count);
+        return count;
+
+    }
+}
