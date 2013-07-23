@@ -1,24 +1,29 @@
 import java.lang.Object;
 import java.util.Scanner;
+import java.io.*;
+
 
 /**
- * Write a description of class CountNumberOfA here.
+ * Write a description of class CountNumberOfAFromFile here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CountNumberOfA
+public class CountNumberOfAFromFile
 {
     // instance variables - replace the example below with your own
     int count;
     private String word;
 
     /**
-     * Constructor for objects of class CountNumberOfA
+     * Constructor for objects of class CountNumberOfAFromFile
      */
-    public int CountNumberOfA()
+    public int CountNumberOfAFromFile() throws
+        FileNotFoundException
     {
-        Scanner scanner = new Scanner (System.in);
+        File text = new File("/Users/Ashwini/Documents/A Sample File.rtf");
+        System.out.println("I can read... " + text.canRead());
+        Scanner scanner = new Scanner(text);
         String word = "";
         System.out.println("Please enter a phrase that ends in a period");
         word = scanner.nextLine();
@@ -30,7 +35,8 @@ public class CountNumberOfA
             }
         }
         System.out.println("The number of letter a in this word is  " + count);
+        
         return count;
-
+        
     }
 }
